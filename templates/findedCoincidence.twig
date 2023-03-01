@@ -1,0 +1,38 @@
+
+{% set totalCoincidences = 0 %}
+{% for coincidence in coincidences %}
+        {% set totalCoincidences = totalCoincidences + coincidence.count_occurrences %}
+{% endfor %}
+<div class="row"> 
+    <div class="col-6">
+        <div class="coincidences-tabs">
+            <span class="coincidences-tabs_title">Найдено: {{ totalCoincidences }} совпадений</span>
+            {% for coincidence in coincidences %}
+                {% set title = coincidence.title ?: '' %}
+                {% set id = coincidence.article_id ?: '' %}
+                {% set count_occurrences = coincidence.count_occurrences ?: '' %}
+                
+                <div class="coincidences-tabs_item">
+                    <span>    
+                        <a href="#" class="coincidences-tab" id="{{ id }}">
+                            {{ title }}
+                        </a>
+                        ({{ count_occurrences }} вхождений)
+                    </span>
+                </div>
+
+            {% endfor %}
+        </div>   
+    </div>
+    <div class="col-6">
+        <div class="coincidences-content">
+            {% for coincidence in coincidences %}
+                {% set id = coincidence.article_id ?: '' %}
+                {% set content = coincidence.content ?: 'Пусто' %}
+                
+                <div class="coincidences-content_item" id="tab-{{ id }}"> {{ content|raw }} </div>
+            {% endfor %}
+        </div>  
+    </div>
+</div>
+<script src="/public/js/tabs.js"></script>

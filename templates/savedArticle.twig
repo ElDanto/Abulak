@@ -1,0 +1,42 @@
+<div class="saved-artciles">
+    <h2 class="wiki-artiles__title">Сохраненные записи</h2>
+    <table class="wiki-artiles__table table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Название статьи</th>
+                <th scope="col">Ссылка на статью</th>
+                <th scope="col">Размер статьи</th>
+                <th scope="col">Кол-во слов</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+                {% set title = article.title ?: '—' %}
+                {% set content = article.content %}
+                {% set link = article.link %}
+                {% set size = article.size ?: '—' %}
+                {% set wordcount = article.wordcount ?: '—' %}
+                <tr>
+                    <td>
+                        {{ title }}
+                    </td>
+                    <td>
+                        {% if (link is not empty) and (title is not empty) %}
+                            <a href="{{ link }}">
+                                https://ru.wikipedia.org/wiki/{{ title }}
+                            </a>
+                        {% else %}
+                            {{ '—' }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ size }}
+                    </td>
+                    <td>
+                        {{ wordcount }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>   
+    </table>
+</div>

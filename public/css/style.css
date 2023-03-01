@@ -1,0 +1,105 @@
+/* Main */
+.wrapper{
+    margin-top: 50px;
+}
+
+.nav-tabs{
+    border-bottom: none;
+}
+.nav-tabs .nav-link.active{
+    border-color: #000 #000 #fff;
+}
+
+.tab-content{
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 0 5px 5px 5px;
+}
+
+.waiting-for{
+    display: inline-block;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Search panel */
+.search-panel{
+    margin-bottom: 10px;
+}
+.search-panel .search-panel_input{
+    margin-right: 10px;
+}
+
+.search-panel_errors{
+    display: block;
+    font-size: 12px;
+    color: red;
+}
+
+/* Articles */
+.articles{
+    min-height: 150px;
+}
+.saved-artciles{
+    margin-top: 20px;
+}
+
+.wiki-artiles__title{
+    padding-top: 10px;    
+    font-size: 18px;
+    font-weight: 600;
+}
+.wiki-artiles__table thead th{
+    vertical-align: middle;
+}
+
+/* Finded Artcile */
+.finded-article{
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+}
+
+.finded-article__info{
+    padding: 5px 15px 20px;
+    border: 1px solid #000;
+
+}
+.finded-article__info > span{
+    display: block;
+}
+
+/* Coincidence */
+.сoincidences{
+    min-height: 150px;
+}
+.сoincidences.active{
+    min-height: 350px;
+}
+.coincidences-tabs_title{
+    display: block;
+    margin-bottom: 20px;
+}
+.coincidences-content_item{
+    display: none;
+}
+.coincidences-content_item.active{
+    display: block;
+    height: 300px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+/* Error */
+
+.error-wrapper{
+    text-align: center;
+    margin: 10% auto;
+    color: grey;
+    font-family: monospace;
+}
+.error-wrapper .error-message{
+    font-weight: 900;
+}

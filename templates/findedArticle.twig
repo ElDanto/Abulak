@@ -1,0 +1,24 @@
+<div class="finded-article">
+    <div class="row">
+        <div class="col-8">
+            <div class="finded-article__info">
+                <span class="wiki-artiles__title">Импорт завершен</span>
+                {% if findedArticle.link is not empty %}
+                    <span>
+                        Найдена статья по адрессу: 
+                        <a href="{{ findedArticle.link }}" target="_blank" rel="noopener noreferrer">
+                            https://ru.wikipedia.org/wiki/{{ findedArticle.title }}
+                        </a>
+                    </span>
+                {% endif %}
+                {% if findedArticle.size is not empty %}
+                    <span>Размер статьи: {{ findedArticle.size }}</span> 
+                {% endif %}
+                {% if findedArticle.wordcount is not empty %}
+                <span>Размер статьи: {{ findedArticle.wordcount }}</span>  
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% include "savedArticle.twig" %}
